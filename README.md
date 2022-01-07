@@ -1,0 +1,8 @@
+CREATING THE BOARD
+The board is represented as a 2D list with 7 rows and 6 columns, which makes it easy to edit the data structure directly to add pieces to the board. The board is actually represented sideways - when we print the board there's 7 columns and 6 rows. Encoding the board sideways will make adding a piece to a column much easier. The 2D array is then parsed to print out the correct pieces in the correct location.
+
+INTERACTION
+To allow for input, I created a function that lets the user drop a piece in a column. Given a column and a piece, the piece “falls” to the first open row in that column. As for error-handling, I have test cases in case user input is invalid. For example, if the user tries to place a piece in a column that doesn’t exist (like column 0 or 8), the program should print an appropriate error message. If you try to place a piece in a column that is already full, the program doesn't allow that.
+
+WINNING
+I created a function that determines whether the game is over when a user gets four in a row (4 pieces of the same symbol in a row in any direction) or the board is full and there are no moves left. More importantly, I wrote a function that will play a complete game of Connect Four, including waiting for players to take their turn by looping until the game has ended. In this function, the game asks players for which column they are choosing to place their piece, re-ask players for their move if an invalid move was given (for example, if a player asked to place a piece in a column that was full), switching turns after a piece is placed, and checking to see if the game is over after a piece is placed.
